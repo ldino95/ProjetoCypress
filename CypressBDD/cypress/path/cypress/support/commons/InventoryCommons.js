@@ -38,3 +38,5 @@ clicarCarrinho(){
 }   
 
 export default  InventoryPage
+
+tste
