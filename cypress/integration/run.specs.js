@@ -12,7 +12,7 @@ describe("Fazendo compra no site petz", () => {
 
         cy.visit('/');
 
-      
+   
     });
     
     
@@ -30,12 +30,14 @@ describe("Fazendo compra no site petz", () => {
     
     it.only("Validar que item está sendo consumido do.", () => {
         
-        cy.fixture("fixtures-demo/petzCredentials.json")
-        .then((credentials) => {
-            cy.get('#search').type(credentials.itemUm);
-            cy.get('.custom-icon').click();
+        cy.fixture('fixtures-demo/petzCredentials')
+        .then(credentials => {
+            this.credentials = credentials;
+        })
+        cy.get('#search').type(credentials.itemUm);
+        cy.get('.custom-icon').click();
         })
        
 
     });
-})
+
