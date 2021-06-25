@@ -15,29 +15,17 @@ describe("Fazendo compra no site petz", () => {
    
     });
     
-    
-     
-       
-    it("Selenecionar o terceiro item da lista e realizar compra do mesmo.", () => {
-        cy.pesquisarRacao();
-        cy.escolherItem();
-        cy.pegarItem();
-        cy.adicionarItemCarrinho();
-        cy.compararItem();
-    });
-
-
-    
+             
     it.only("Validar que item está sendo consumido do.", () => {
         
-        cy.fixture('fixtures-demo/petzCredentials')
-        .then(credentials => {
-            this.credentials = credentials;
-        })
-        cy.get('#search').type(credentials.itemUm);
-        cy.get('.custom-icon').click();
-        })
-       
+        cy.fixture("credentials")
+        .then((credentials) => {
+            cy.log(credentials)
+            cy.log(credentials.itemUm)
+            cy.get('#search').type(credentials.itemUm);
+            cy.get('.custom-icon').click();
+        });
 
     });
 
+});
