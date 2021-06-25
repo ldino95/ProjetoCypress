@@ -1,0 +1,21 @@
+{
+  "name": "cypress-projetos",
+  "version": "1.0.0",
+  "description": "curso de cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": " npx cypress run --headless",
+    "test:chrome": "cypress run --browser chrome --no-exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.6.0",
+    "cypress-cucumber-preprocessor": "^2.4.0",
+    "cypress-iframe": "^1.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/integration/steps"
+  }
+}
